@@ -17,18 +17,20 @@ document.addEventListener("DOMContentLoaded", () => {
       let countryCard = document.createElement("div");
       countryCard.classList.add("country-card");
       countryCard.innerHTML = `
-                    <img src="${country["flags"].png}" alt="${country["flags"].alt}">
-                    <div class="content">
-                        <h1>${country["name"].common}</h1>
-                        <p><b>Population</b>:${country["population"]}</p>
-                        <p><b>Region</b>:${country["region"]}</p>
-                        <p><b>Capital</b>:${country["capital"]}</p>
-                    </div>
+        <img src="${country["flags"].png}" alt="${country["flags"].alt}">
+        <div class="content">
+        <h1>${country["name"].common}</h1>
+          <p><b>Population</b>:${country["population"]}</p>
+          <p><b>Region</b>:${country["region"]}</p>
+          <p><b>Capital</b>:${country["capital"]}</p>
+          <p><b>Timezone</b>:${country["timezones"]}</p>
+        </div>
                     `;
       Main.appendChild(countryCard);
     });
   }
-  Input.addEventListener("keyup", () => {
+  fetchCountries();
+  Input.addEventListener("input", () => {
     async function fetchSearchCountries() {
       try {
         const response2 = await fetch(
@@ -43,13 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
           let countryCard = document.createElement("div");
           countryCard.classList.add("country-card");
           countryCard.innerHTML = `
-                    <img src="${country["flags"].png}" alt="${country["flags"].alt}">
-                    <div class="content">
-                        <h1>${country["name"].common}</h1>
-                        <p><b>Population</b>:${country["population"]}</p>
-                        <p><b>Region</b>:${country["region"]}</p>
-                        <p><b>Capital</b>:${country["capital"]}</p>
-                    </div>
+            <img src="${country["flags"].png}" alt="${country["flags"].alt}">
+            <div class="content">
+              <h1>${country["name"].common}</h1>
+              <p><b>Population</b>:${country["population"]}</p>
+              <p><b>Region</b>:${country["region"]}</p>
+              <p><b>Capital</b>:${country["capital"]}</p>
+              <p><b>Timezone</b>:${country["timezones"]}</p>
+            </div>
                     `;
           Section.appendChild(countryCard);
         });
@@ -59,8 +62,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     fetchSearchCountries();
   });
-  function update() {
-    fetchCountries();
-  }
-  update();
 });
