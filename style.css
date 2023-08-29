@@ -116,55 +116,8 @@ main .country-card .content p {
   padding: 5px 0px;
 }
 
-section .country-card {
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: var(--semiLight);
-  /* border: 2px solid; */
-  width: 270px;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-section .country-card:hover {
-  box-shadow: 0 0 10px var(--darkTheme);
-  transform: translateY(-10px);
-}
-
-section .country-card img {
-  width: 100%;
-  height: 200px;
-}
-
-section .country-card .content {
-  padding: 10px 20px;
-}
-
-section .country-card .content h1 {
-  font-size: 22px;
-  padding: 10px 0px;
-}
-
-section .country-card .content p {
-  font-size: 15px;
-  padding: 5px 0px;
-}
-
-section {
-  width: 100%;
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  /* align-items: center; */
-  place-content: center;
-  justify-content: space-between;
-  padding: 0px 50px;
-  row-gap: 30px;
-}
 @media (max-width: 1230px) {
   main {
-    grid-template-columns: auto auto auto;
-  }
-  section {
     grid-template-columns: auto auto auto;
   }
 }
@@ -173,16 +126,10 @@ section {
   main {
     grid-template-columns: auto auto;
   }
-  section {
-    grid-template-columns: auto auto;
-  }
 }
 
 @media (max-width: 650px) {
   main {
-    grid-template-columns: auto;
-  }
-  section {
     grid-template-columns: auto;
   }
 }
